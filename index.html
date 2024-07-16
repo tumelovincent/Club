@@ -1,0 +1,343 @@
+<html>
+<head>
+<base href="index.html">
+<title>Luminous Lounge - Elegant Night Club Experience</title>
+<style>
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+header {
+  background-color: #ffffff;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+nav ul li {
+  margin: 0 15px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav ul li a:hover {
+  color: #ff4081;
+}
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('elegant-club.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 100;
+  background: rgba(255, 255, 255, 0.7);
+}
+.hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+h1 {
+  font-size: 3.5em;
+  margin-bottom: 20px;
+  color: #333333;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ff4081;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.cta-button:hover {
+  background-color: #e91e63;
+}
+.section {
+  padding: 6px 0;
+}
+h2 {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+}
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.event-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.event-info {
+  padding: 20px;
+}
+.event-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #333333;
+}
+.event-date {
+  font-size: 0.9em;
+  color: #666666;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.gallery-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.gallery-item:hover .gallery-image {
+  transform: scale(1.1);
+}
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+footer {
+  background-color: #f5f5f5;
+  color: #333333;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+.booking-form {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333333;
+}
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+.submit-btn {
+  background-color: #ff4081;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1em;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.submit-btn:hover {
+  background-color: #e91e63;
+}
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#residents">Residents</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#booking">Book a Table</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero" id="home">
+    <div class="hero-content">
+      <h1>Luminous Lounge</h1>
+      <p>Experience Elegance After Dark</p>
+      <a href="#booking" class="cta-button">Reserve Your Table</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <section id="events" class="section">
+      <h2>Upcoming Events</h2>
+      <div class="event-grid">
+        <div class="event-card">
+          <img src="images/jazz.jpg" alt="Jazzy Evening" class="event-image" width="300" height="200">
+          <div class="event-info">
+            <h3 class="event-title">Jazzy Evening</h3>
+            <p class="event-date">July 15, 2024</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <img src="images/Cocktail.jpg" alt="Cocktail Masterclass" class="event-image" width="300" height="200">
+          <div class="event-info">
+            <h3 class="event-title">Cocktail Masterclass</h3>
+            <p class="event-date">July 22, 2024</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <img src="images/Electronic.png" alt="DJ Night: Electronic Fusion" class="event-image" width="300" height="200">
+          <div class="event-info">
+            <h3 class="event-title">DJ Night: Electronic Fusion</h3>
+            <p class="event-date">July 29, 2024</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="residents" class="section">
+      <h2>Our Resident Artists</h2>
+      <div class="event-grid">
+        <div class="event-card">
+          <img src="dj-alex.jpg" alt="DJ Alex" class="event-image" width="300" height="200">
+          <div class="event-info">
+            <h3 class="event-title">DJ Alex</h3>
+            <p>Master of House and Techno</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <img src="lisa-band.jpg" alt="Lisa & The Lounge Band" class="event-image" width="300" height="200">
+          <div class="event-info">
+            <h3 class="event-title">Lisa & The Lounge Band</h3>
+            <p>Smooth Jazz and Soul</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <img src="mark-mixologist.jpg" alt="Mark the Mixologist" class="event-image" width="300" height="200">
+          <div class="event-info">
+            <h3 class="event-title">Mark the Mixologist</h3>
+            <p>Crafting Exquisite Cocktails</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <h2>Luminous Lounge Highlights</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="images/lounge 1.jpg" alt="Elegant lounge interior" class="gallery-image" width="250" height="250">
+        </div>
+        <div class="gallery-item">
+          <img src="images/lounge 2.jpg" alt="Sophisticated cocktail bar" class="gallery-image" width="250" height="250">
+        </div>
+        <div class="gallery-item">
+          <img src="images/lounge 3.jpg" alt="Live jazz performance" class="gallery-image" width="250" height="250">
+        </div>
+        <div class="gallery-item">
+          <img src="images/lounge 4.jpg" alt="Exclusive VIP area" class="gallery-image" width="250" height="250">
+        </div>
+      </div>
+    </section>
+
+    <section id="video-highlights" class="section">
+      <h2>Experience Luminous Lounge</h2>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section id="booking" class="section">
+      <h2>Reserve Your Table</h2>
+      <form class="booking-form" action="booking" method="GET">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="guests">Number of Guests:</label>
+          <input type="number" id="guests" name="guests" min="1" max="10" required>
+        </div>
+        <div class="form-group">
+          <label for="package">Reservation Package:</label>
+          <select id="package" name="package">
+            <option value="standard">Standard Seating</option>
+            <option value="vip">VIP Lounge</option>
+            <option value="private">Private Booth</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn">Confirm Reservation</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Luminous Lounge. All rights reserved.</p>
+    <p>For a night of sophistication and unforgettable moments.</p>
+  </footer>
+</body></html>
