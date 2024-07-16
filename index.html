@@ -126,26 +126,107 @@ h2 {
   font-size: 0.9em;
   color: #666666;
 }
+
+/* Basic reset and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Section styling */
+.section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Gallery styling */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
+
 .gallery-item {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 .gallery-image {
   width: 100%;
   height: 250px;
   object-fit: cover;
   transition: transform 0.5s;
 }
+
 .gallery-item:hover .gallery-image {
   transform: scale(1.1);
 }
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.modal-content, .caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from { transform: scale(0); } 
+  to { transform: scale(1); }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+}
+
+
+
+  
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -281,22 +362,47 @@ footer {
     </section>
 
     <section id="gallery" class="section">
-      <h2>Luminous Lounge Highlights</h2>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="images/lounge 1.jpg" alt="Elegant lounge interior" class="gallery-image" width="250" height="250">
-        </div>
-        <div class="gallery-item">
-          <img src="images/lounge 2.jpg" alt="Sophisticated cocktail bar" class="gallery-image" width="250" height="250">
-        </div>
-        <div class="gallery-item">
-          <img src="images/lounge 3.jpg" alt="Live jazz performance" class="gallery-image" width="250" height="250">
-        </div>
-        <div class="gallery-item">
-          <img src="images/lounge 4.jpg" alt="Exclusive VIP area" class="gallery-image" width="250" height="250">
-        </div>
-      </div>
-    </section>
+  <h2>Luminous Lounge Highlights</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="images/lounge 1.jpg" alt="Elegant lounge interior" class="gallery-image" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+      <img src="images/lounge 2.jpg" alt="Sophisticated cocktail bar" class="gallery-image" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+      <img src="images/lounge 3.jpg" alt="Live jazz performance" class="gallery-image" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+      <img src="images/lounge 4.jpg" alt="Exclusive VIP area" class="gallery-image" onclick="openModal(this)">
+    </div>
+  </div>
+</section>
+
+<!-- Modal Structure -->
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImage" onclick="closeModal()">
+  <div id="caption"></div>
+</div>
+
+
+    <script>
+      
+// Open the Modal
+function openModal(image) {
+  document.getElementById('myModal').style.display = "block";
+  document.getElementById('modalImage').src = image.src;
+  document.getElementById('caption').innerHTML = image.alt;
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+
+    </script>
 
     <section id="video-highlights" class="section">
       <h2>Experience Luminous Lounge</h2>
